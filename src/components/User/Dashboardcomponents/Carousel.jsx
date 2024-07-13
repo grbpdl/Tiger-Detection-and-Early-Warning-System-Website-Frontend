@@ -14,31 +14,7 @@ function CarouselImage() {
     "https://images.unsplash.com/photo-1526034332220-067b0f400e06?q=80&w=1906&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ]);
 
-  const getImages = async () => {
-    try {
-      const response = await axios.get(APPROVED_IOT_DETECTIONS_URL, {
-        headers: { 'Content-Type': 'application/json' },
-      });
-      if (response.status === 200) {
-        const latestImages = response.data.slice(0, 4).map(item => item.IOTImageURL);
-        setImages(latestImages);
-        
-        
-        console.log(response.data);
-      } else {
-        toast.error("Didnot receive the status code of 200")
-      }
-    } catch (err) {
-      console.log(err);
-      toast.error("Error Occured while loading the images form iot")
-    }
-  }
-
-  useEffect(() => {
-    getImages();
-    
-  }, []);
-
+ 
 
 
   return (

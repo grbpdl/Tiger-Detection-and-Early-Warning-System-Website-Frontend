@@ -26,15 +26,16 @@ const HeaderSection = () => {
                             <a href="#victim" className="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">
                                 Donate for a cause
                             </a>
+                            <a href="https://youtu.be/XvW9CiBQgYE?si=Pdn7vz5g6kkwCRn0" target='_blank'>
                             <button
                                 type="button"
                                 className="btn-play"
                                 data-bs-toggle="modal"
-                                onClick={() => playVideo("https://www.youtube.com/embed/XvW9CiBQgYE")}
                                 data-bs-target="#videoModal"
                             >
                                 <span></span>
                             </button>
+                            </a>
                             <h6 className="text-white m-0 ms-4 d-none d-sm-block">Watch Video</h6>
                         </div>
                     </div>
@@ -48,9 +49,7 @@ const HeaderSection = () => {
             <div
                 className="modal modal-video fade"
                 id="videoModal"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
+       
             >
                 <div className="modal-dialog">
                     <div className="modal-content rounded-0">
@@ -68,7 +67,7 @@ const HeaderSection = () => {
                             <div className="ratio ratio-16x9">
                                 <iframe
                                     className="embed-responsive-item"
-                                    src={videoSrc ? `${videoSrc}?autoplay=1&amp;modestbranding=1&amp;showinfo=0` : ''}
+                                    src={videoSrc}
                                     id="video"
                                     allowFullScreen
                                     allowscriptaccess="always"

@@ -10,6 +10,7 @@ import TigerInfo from './Dashboardcomponents/TigerInfo';
 import HeaderSection from './Dashboardcomponents/HeaderSection';
 import VictimCarousel from './Dashboardcomponents/VictimCarousel';
 import Button from '../Button';
+import { ImageGallery } from './Dashboardcomponents/ImagesGallery';
 
 function UserDashboard() {
   const navigate = useNavigate();
@@ -28,6 +29,8 @@ function UserDashboard() {
       </div>
       <TigerInfo className="#blogs"/>
       <Stats className="#stats"/>
+      <h1 className='text-center text-2xl font-semibold text-gray-800 lg:text-3xl '>Recent Tiger Detections by our System</h1>
+      <ImageGallery/>
       <EmergencyContacts className="#contacts"/>
     <Footer/>
     </div>

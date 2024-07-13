@@ -28,7 +28,7 @@ const Navbar = ({navLinks, activenavtitle,buttontitle,callback}) => {
     <nav className='bg-dimwhite flex justify-between items-center h-auto px-4 text-white sticky  '>
       {/* Logo */}
     
-      <img src="../../src/assets/logo.png" alt="logo" className="w-[100px] h-[42px]" />
+      <img src="../../src/assets/landscape_logo.png" alt="logo" className="w-[100px] h-[42px]" />
         <div className='w-full'></div>
 
       {/* Desktop Navigation */}

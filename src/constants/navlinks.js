@@ -11,10 +11,10 @@ export  const usernavLinks = [
       id: "/posts",
       title: "Posts",
     },
-    {
-      id: "#victim",
-      title: "Donate",
-    },
+    // {
+    //   id: "#victim",
+    //   title: "Donate",
+    // },
   
     
   ];

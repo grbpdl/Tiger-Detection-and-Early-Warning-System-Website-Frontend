@@ -23,7 +23,7 @@ function Posts() {
       });
       console.log(response.data)
             if (response.status === 200) {
-        setPosts(response.data.message);
+        setPosts(response.data.message.reverse());
       } else {
         toast.error("Didnot receive the status code of 200")
       }
@@ -45,7 +45,7 @@ function Posts() {
         {posts.map(post => (
         <Post 
           key={post.id}
-          name={`${post.user_first_name} ${post.user_last_name}`} 
+          name={`${post.user_first_name && post.user_last_name ? `${post.user_first_name} ${post.user_last_name}` : 'From IOT'}`}
           date={post.postDate} 
           time={post.postTime} 
           description={post.postTitle} 

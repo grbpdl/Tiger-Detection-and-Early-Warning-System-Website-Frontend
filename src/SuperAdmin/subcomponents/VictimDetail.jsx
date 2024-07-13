@@ -58,7 +58,7 @@ function VictimDetail({ id, victimName, victimAge, victimAddress, victimPhoto, v
       <Toaster position='center' reverseOrder={false} className="bg-white"></Toaster>
       <div className="relative grid grid-cols-1 gap-4 p-4 mb-8 border rounded-md bg-gray-200 w-full">
         <div className="relative flex gap-4 w-full">
-          <img src={victimPhoto} alt="" loading="lazy" />
+          <img src={victimPhoto} alt="" loading="lazy" className='w-30 h-20' />
           <div className="flex flex-col w-full">
             <div className="flex flex-row justify-between">
               <p className="relative text-xl whitespace-nowrap text-green-500">{victimName}</p>

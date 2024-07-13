@@ -218,11 +218,13 @@
     position: relative;
     max-width: 800px;
     margin: 60px auto 0 auto;
+    z-index:200;
 }
 
 .modal-video .modal-body {
     position: relative;
     padding: 0px;
+    z-index:200;
 }
 
 .modal-video .close {
@@ -237,6 +239,7 @@
     color: #FFFFFF;
     background: #000000;
     opacity: 1;
+    
 }
 
 .header-carousel .owl-nav {

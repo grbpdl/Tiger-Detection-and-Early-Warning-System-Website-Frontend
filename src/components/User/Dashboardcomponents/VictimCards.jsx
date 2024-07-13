@@ -54,7 +54,7 @@ function VictimCards({ id,
           <div className="w-1/2 h-full">
           <img 
             className=" object-cover object-center w-full h-full rounded-lg" 
-            src="https://risingnepaldaily.com/storage/editor/photos/shares/_126010908_bhadaitharusolo_noglasses.jpg" 
+            src={victimPhoto} 
             alt="Tiger Attack Survivor"
           />
         </div>

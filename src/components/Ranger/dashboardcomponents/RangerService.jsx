@@ -25,22 +25,22 @@ function RangerService() {
           <div className="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
           <i className="fa fa-3x fa-mobile-alt text-green-500 img-fluid mb-3"></i>
             <h5 className="mb-3">Continous Engagement with Community</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
+            <span>Making public announcemets through community post</span>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
           <i className="fa fa-3x fa-mobile-alt text-green-500 img-fluid mb-3"></i>
             <h5 className="mb-3">Approve Posts</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
+            <span>Approving or deleting the posts made in community forums.</span>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
           <i className="fa fa-3x fa-mobile-alt text-green-500 img-fluid mb-3"></i>
             <h5 className="mb-3">Add Danger Location</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
+            <span>Adding the danger location on the Maps.</span>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
           <i className="fa fa-3x fa-mobile-alt text-green-500 img-fluid mb-3"></i>
             <h5 className="mb-3">Handle any emergencies</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
+            <span>Handling the emergency situations that can occur through the tigers.</span>
           </div>
           
          

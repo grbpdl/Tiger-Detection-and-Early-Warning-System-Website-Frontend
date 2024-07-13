@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import Loader from './Loader/Loader'
 import { useFormik } from 'formik';
 import { Toaster,toast } from 'react-hot-toast';
@@ -8,23 +8,25 @@ import axios from '../api/axios';
 import { useNavigate } from 'react-router-dom';
 function Login() {
     const navigate=useNavigate();
+    const [loading, setLoading] = useState(false);
 
     const formik = useFormik({
         initialValues : {
             email: '',
             password:''
         },
-        // validate:loginValidation,
+        validate:loginValidation,
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit :async values => {
             // console.log(values.email);
             // console.log(values.password);
+            // setLoading(true);
 
         
             try {
                 const response = await axios.post(LOGIN_USER_URL,
-                    JSON.stringify({email:"admin@gmail.com",password:"ishan@123"}),
+                    JSON.stringify({email:values.email,password:values.password}),
                   
                     {
                         headers: { 'Content-Type': 'application/json' },
@@ -34,14 +36,18 @@ function Login() {
 
                     console.log(response.data);
                 if(response.data.role=="User")
+                {
+                    setLoading(false);
                     toast.error("Cannot login as User");
+                }
                 if(response.data.role=="Admin")
                     {   localStorage.setItem('token', JSON.stringify(response.data.access));
+                        setLoading(false);
                         toast.success("Logged in Sucessfully");
                         navigate('/admindashboard')
                     }
                 if(response.data.role=="Ranger")
-                    {
+                    { setLoading(false);
                         toast.success("Logged in Sucessfully");
                         localStorage.setItem('token', JSON.stringify(response.data.access));
                         navigate('/rangerdashboard')
@@ -56,6 +62,7 @@ function Login() {
                 else{
                     console.log(response.data);
                 toast.error(response.data.message)
+                setLoading(false);
                 }
                 
                 // if(response?.data?.user?.role=="user")
@@ -67,15 +74,16 @@ function Login() {
                 
                
             } catch (err) {
-                console.log(err.message);
-                
-                toast.error("error occured")
+                console.log(err.response.data.message);
+                setLoading(false);
+                toast.error(err.response.data.message)
          }
+         
         }
         
 })
 
- const loading=false;
+
   return (
     <>
     {loading ? (

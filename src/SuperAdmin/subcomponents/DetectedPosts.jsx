@@ -3,9 +3,23 @@ import Button from '../../components/Button';
 import { APPROVE_DETECTIONS_URL,DECLINE_DETECTIONS_URL } from '../../api/urls';
 import axios from '../../api/axios';
 import { Toaster, toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 
-function DetectedPosts({ id, imageURL, onPostChange }) {
+function DetectedPosts({ id, imageURL,camera, onPostChange }) {
+  const navigate=useNavigate();
+
+  const handleNavigation = () => {
+    if (camera === 'one' || camera ==='One') {
+      navigate('/livefeed1');
+    } else if (camera === 'two'|| camera==='Two') {
+      navigate('/livefeed2');
+    } else {
+      toast.error("Invalid camera value");
+    }
+  };
+
+  
   const makePublic = async () => {
     // Handle make public logic
     try {
@@ -59,7 +73,7 @@ function DetectedPosts({ id, imageURL, onPostChange }) {
   return (
     <div className="max-w-xs container bg-black rounded-xl shadow-lg transform hover:shadow-black backdrop-blur-md bg-white/30">
       <div>
-        <a href="www.livefeed.com" target='blank'><h1 className="text-2xl mt-2 ml-4 font-bold text-green-500 cursor-pointer hover:text-gray-900 transition duration-100 text-center">Cam1</h1></a>
+        <h1 className="text-2xl mt-2 ml-4 font-bold text-green-500 cursor-pointer hover:text-gray-900 transition duration-100 text-center" onClick={handleNavigation}>Cam {camera}</h1>
       </div>
       {/* Use the passed imageURL prop */}
       <img className="w-full cursor-pointer" src={imageURL} alt="" />

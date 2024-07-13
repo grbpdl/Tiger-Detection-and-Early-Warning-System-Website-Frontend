@@ -4,7 +4,7 @@ import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
 import { Toaster,toast } from 'react-hot-toast';
 import { MapContainer, TileLayer, useMap,Marker,Popup,useMapEvents,useMapEvent } from 'react-leaflet'
-import { GET_ALL_COORDINATES_URL,ADD_COORDINATE_URL } from '../../api/urls';
+import { GET_ALL_COORDINATES_URL,ADD_COORDINATE_URL,DELETE_COORDINATES_URL } from '../../api/urls';
 import axios from '../../api/axios';
 
 
@@ -31,7 +31,7 @@ function AddLocation() {
           ...response.data.danger_zone_coordinates,
         ];
         setCoordinates(combinedCoordinates);
-        setCoordinates(combinedCoordinates);
+console.log(response.data)
         
       } else {
         toast.error("Didnot receive the status code of 200")
@@ -41,9 +41,29 @@ function AddLocation() {
       toast.error("Error Occured in catch expression")
     }
   }
-const deleteCoordinate=async(lat, lng)=>{
-  console.log(lat)
-  console.log(lng)
+const deleteCoordinate=async(id)=>{
+  try {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const response = await axios.get(`${DELETE_COORDINATES_URL}${id}`, {
+      headers: { 'Authorization': `Bearer ${token}`,
+                           'Content-Type': 'application/json' },
+    });
+    if (response.status === 200) {
+toast.success(response.data.message)
+getCoordiantes();
+      
+    }
+     else if(response.status === 202){
+      toast.error("Cant delete this coordinate")
+    }
+     else {
+      toast.error("Didnot receive the status code of 200")
+    }
+  } catch (err) {
+    console.log(err);
+    toast.error("Error Occured in catch expression")
+  }
+
   
 }
 
@@ -121,7 +141,7 @@ const addCoordinate = async()=>{
              <p>Tiger Detected Here</p>  
               <button 
         className="bg-green-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-full mt-2 items-center" 
-        onClick={() => deleteCoordinate(coord.latitude, coord.longitude)}
+        onClick={() => deleteCoordinate(coord.id)}
       >
         Delete
       </button>

@@ -55,6 +55,7 @@ function SystemDetections() {
         <DetectedPosts  key={post.id}
         id={post.id}
         imageURL={post.IOTImageURL}
+        camera={post.Camera}
         onPostChange={handlePostChange} />
       ))}
 

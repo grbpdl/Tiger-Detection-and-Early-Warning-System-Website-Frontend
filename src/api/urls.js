@@ -11,6 +11,7 @@
  export const ADD_POST_URL="api/forum/post";
  export const RANGER_ADD_POST_URL="api/ranger/forum/post";
  export const GET_ALL_COORDINATES_URL="api/post_coordinates";
+ export const DELETE_COORDINATES_URL="api/delete-danger-zone/"; //<int:id>
 
  
  export const APPROVED_IOT_DETECTIONS_URL="api/iot/image";
@@ -24,9 +25,11 @@
  export const DELETE_VICTIM_URL="api/admin/victim/delete/"; //int id
  export const EDIT_VICTIM_URL="api/admin/victim/edit/"; //int id
  export const VICTIM_DONATION_URL="api/victim/"; //<int:id>/donations
+ export const ALL_DONATION_URL="api/donation/admin"; 
 
 
  export const KHALTI_URL="api/khalti/try/";
+ export const KHALTI_VERIFY_URL="api/khalti/verify";
 
 
 

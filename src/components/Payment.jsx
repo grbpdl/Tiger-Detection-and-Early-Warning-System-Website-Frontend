@@ -24,6 +24,7 @@ function Payment() {
 
 
   const donate = async () => {
+
     if (isNaN(amount) || amount <= 0) {
       toast.error("Please enter a valid amount");
       return;
@@ -33,10 +34,11 @@ function Payment() {
       const response = await axios.post(`${KHALTI_URL}${id}`, JSON.stringify({ amount: parseFloat(amount) }), {
         headers: { 'Content-Type': 'application/json' },
       });
-
+      console.log(response.data);
       if (response.status === 200) {
         const { payment_url } = response.data;
-        window.open(payment_url, '_blank');  // Redirect to the payment URL
+        navigate('/')
+        window.open(payment_url);  // Redirect to the payment URL
       } else {
         toast.error("Did not receive the status code of 200");
       }
@@ -47,7 +49,7 @@ function Payment() {
   }
 
   return (
-    <div>
+    <div className='flex-1 justify-center'>
       <Toaster position='center' reverseOrder={false} className="bg-white" />
       <div className="flex flex-col items-center">
         <p>Payment for Victim ID: {id}</p>

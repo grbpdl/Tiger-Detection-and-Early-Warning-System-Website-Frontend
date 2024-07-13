@@ -15,6 +15,11 @@ import RangerList from './SuperAdmin/RangerList.jsx';
 import TigerDetections from './SuperAdmin/TigerDetections.jsx';
 import RangerDashboard from './components/Ranger/RangerDashboard.jsx';
 import VictimsList from './SuperAdmin/VictimsList.jsx';
+import SucessPage from './components/SucessPage.jsx';
+import ThankYou from './ThankYou.jsx';
+import LiveFeedOne from './SuperAdmin/LiveFeedOne.jsx';
+import LiveFeedTwo from './SuperAdmin/LiveFeedTwo.jsx';
+
 
 
 function App() {
@@ -43,6 +48,11 @@ function App() {
       <Route exact path="/rangers" element={<RangerList/>}/>
       <Route exact path="/victims" element={<VictimsList/>}/>
       <Route exact path="/payment" element={<Payment/>}/>
+      <Route exact path="/livefeed1" element={<LiveFeedOne/>}/>
+      <Route exact path="/livefeed2" element={<LiveFeedTwo/>}/>
+      <Route exact path="/success" element={<SucessPage/>}/>
+      <Route exact path="/thankyou" element={<ThankYou/>}/>
+ 
 
 
       </Routes>

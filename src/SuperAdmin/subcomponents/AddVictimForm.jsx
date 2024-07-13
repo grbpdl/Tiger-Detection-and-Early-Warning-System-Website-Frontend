@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import { Toaster, toast } from 'react-hot-toast';
 import { ADD_VICTIM_URL } from '../../api/urls';
 import axios from '../../api/axios';
+import {addVictimValidation} from '../../helper/validate';
 
 const AddVictimForm = ({ openPopUp, closePopUp, refreshUsers }) => {
     const [fileError, setFileError] = useState(null);
@@ -17,6 +18,7 @@ const AddVictimForm = ({ openPopUp, closePopUp, refreshUsers }) => {
             description: '',
             uploadfile: null,
         },
+        validate: addVictimValidation,
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit: async (values) => {
