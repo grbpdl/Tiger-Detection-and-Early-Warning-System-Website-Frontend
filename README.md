@@ -1,7 +1,10 @@
+
+##  Tiger Detection and Early Warning System Using CNN and Edge Computing
+
 The BaagVaag-Tiger Alert System (TAS) is aimed at tackling the ongoing confrontations between humans and tigers, particularly around Nepal’s Bardiya National Park and similar areas where many killings has occurred due to tiger attacks. 
 This system utilizes Raspberry Pi equipped with camera sensors to monitor designated areas and identify tigers in real time relying on the Computer Vision AI model specifically Convolution Neural Network (CNN) that is trained to identify tigers from other wildlife. This detection triggers a series of immediate alerts, seamlessly delivered through a mobile application to both locals and wildlife authorities. The mobile application is further designed to engage local communities where the users can access important information about tigers, report sightings, and contribute to the overall effort. By integrating with Map API, TAS also helps users understand where tiger threats are most prevalent, enabling them to take proactive measures. 
 
-<h4>Tools Used</h4>
+<h4>System Architecture</h4>
 
 ![proposed_techonology_final](https://github.com/user-attachments/assets/76dd0d9d-e695-413a-be8c-1118bdebc8c1)
 
